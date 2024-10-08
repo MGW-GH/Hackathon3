@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-mgwgh-hackathon3-bwhosp7hnkm.ws.codeinstitute-ide.net', # Matt
+    '8000-mgwgh-hackathon3-bwhosp7hnkm.ws.codeinstitute-ide.net', # Dave
     '8000-mgwgh-hackathon3-amurexk4ww1.ws.codeinstitute-ide.net', # Charles
     '.herokuapp.com',
     ]

@@ -6,7 +6,6 @@ from django.views.generic import TemplateView
 def my_quiz(request):
     return HttpResponse("Lets build a great, fun, quiz app!")
 
-from django.views.generic import TemplateView
 
 class HomePage(TemplateView):
     """

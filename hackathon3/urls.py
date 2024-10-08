@@ -21,5 +21,6 @@ from quiz.views import my_quiz
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('quiz/', my_quiz, name='quiz'),
     path('', include('quiz.urls'), name='home'),
 ]

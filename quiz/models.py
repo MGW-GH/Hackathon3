@@ -7,7 +7,7 @@ STATUS = ((0, "General Knowledge"), (1, "Sport"), (2, "History"), (3, "Science &
 class Question(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_stamps", null=True)
     question = models.CharField(max_length=500, unique=True)
-    answer = models.CharField(max_length=500, unqiue=False)
+    answer = models.CharField(max_length=500, unique=False)
     created_at = models.DateTimeField(auto_now_add=True)
     category = models.IntegerField(choices=STATUS, default=0)
 

@@ -19,7 +19,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .bg-dark{
-	background-color: #4A5DE8!important;
+	background-color: #333333!important;
 }
 
 .nav-link{
@@ -36,6 +36,10 @@ h1,h2,h3,h4,h5,h6{
 
 .btn{
 	border-radius: 5px;
+}
+
+.btn-warning{
+    background-color: #FFEA00!important;
 }
 
 .row-image{

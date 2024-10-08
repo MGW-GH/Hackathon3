@@ -37,6 +37,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '8000-mgwgh-hackathon3-bwhosp7hnkm.ws.codeinstitute-ide.net', # Dave
     '8000-mgwgh-hackathon3-amurexk4ww1.ws.codeinstitute-ide.net', # Charles
+    '8000-mgwgh-hackathon3-553n9riw25z.ws.codeinstitute-ide.net', # Matt
     '.herokuapp.com',
     ]
 
@@ -89,7 +90,7 @@ WSGI_APPLICATION = 'hackathon3.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+        'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }

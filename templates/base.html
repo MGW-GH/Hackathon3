@@ -55,10 +55,10 @@
             <div class="form-inline my-2 my-lg-0">
                 {% if user.is_authenticated %}
                 <p class="text-end m-3 user-status">You are logged in as {{ user.username }}</p>
-                <a href="#" class="btn btn-warning">Logout</a>
+                <a href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
                 {% else %}
                 <p class="text-end m-3 user-status">You are not logged in</p>
-                <a href="#" class="btn btn-warning">Login/Signup</a>
+                <a href="{% url 'login' %}" class="btn btn-warning">Login/Signup</a>
                 {% endif %}
             </div>
         </div>

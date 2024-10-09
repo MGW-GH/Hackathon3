@@ -1,4 +1,4 @@
-![Logo/header img](/documentation/readme-images/quizzard-text-logo.png)
+![Logo/header img](/documentation/readme-images/quizards-text-logo.webp) ![Quizard img](/documentation/readme-images/quizzard-img.webp)
 
 # Project overview 
 

@@ -21,7 +21,8 @@ class HomePage(TemplateView):
     """
     Displays home page
     """
-    template_name = 'base.html'
+    #template_name = 'base.html'
+    template_name = 'index.html'
 
 
 class UserRegistrationView(CreateView):

@@ -5,16 +5,19 @@
 <div class="row">
     <div class="col-lg-8 mx-auto">
         <div class="quiz-page-header">
-            <img src="/static/images/quizards-text-logo.webp" alt="Quizards text logo"><img class=".d-sm"
+            <img src="/static/images/quizards-text-logo.webp" alt="Quizards text logo">
+            <div>
+            <img
                 src="/static/images/quizzard-img.webp" alt="Quizard character">
+            </div>
         </div>
-        <div class="box-element question-card mx-auto">
+        <div class="box-element question-card mx-auto ">
             <!-- {% if user.is_authenticated %}
 			{% else %}
 			{% endif %} -->
             <form id="quiz-form">
                 <div class="question">
-                    <p>What is the capital of France?</p>
+                    <p><strong>What is the capital of France?</strong></p>
                     <input type="radio" name="q1" value="A" id="q1a">
                     <label for="q1a">A) London</label><br>
                     <input type="radio" name="q1" value="B" id="q1b">

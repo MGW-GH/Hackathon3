@@ -17,14 +17,16 @@
                 {% for question in questions %}
                 <div class="question">
                     <p>{{ forloop.counter }}. <strong>{{ question.question }}</strong></p>
-                    <input type="radio" name="q{{ forloop.counter }}" value="A" id="q{{ forloop.counter }}-A">
-                    <label for="q{{ forloop.counter }}-A">A) {{ question.option_a }}</label><br>
-                    <input type="radio" name="q{{ forloop.counter }}" value="B" id="q{{ forloop.counter }}-B">
-                    <label for="q{{ forloop.counter }}-B">B) {{ question.option_b }}</label><br>
-                    <input type="radio" name="q{{ forloop.counter }}" value="C" id="q{{ forloop.counter }}-C">
-                    <label for="q{{ forloop.counter }}-C">C) {{ question.option_c }}</label><br>
-                    <input type="radio" name="q{{ forloop.counter }}" value="D" id="q{{ forloop.counter }}-D">
-                    <label for="q{{ forloop.counter }}-D">D) {{ question.option_d }}</label>
+                    <input type="hidden" name="question_id" value="{{ question.question }}">
+
+                    <input type="radio" name="q-{{ question.question }}" value="A" id="q{{ forloop.counter }}_a" required>
+                    <label for="q{{ forloop.counter }}_a">A) {{ question.option_a }}</label><br>
+                    <input type="radio" name="q-{{ question.question }}" value="B" id="q{{ forloop.counter }}_b">
+                    <label for="q{{ forloop.counter }}_b">B) {{ question.option_b }}</label><br>
+                    <input type="radio" name="q-{{ question.question }}" value="C" id="q{{ forloop.counter }}_c">
+                    <label for="q{{ forloop.counter }}_c">C) {{ question.option_c }}</label><br>
+                    <input type="radio" name="q-{{ question.question }}" value="D" id="q{{ forloop.counter }}_d">
+                    <label for="q{{ forloop.counter }}_d">D) {{ question.option_d }}</label>
                 </div>
                 <hr>
                 {% endfor %}
@@ -40,4 +42,49 @@
 
 </div>
 
-{% endblock content %}
+<!-- Modal -->
+<div id="resultModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Quiz Result</h2>
+        <p id="score-message"></p>
+        <button id="submit-score">Submit Score</button>
+        <button id="cancel">Cancel</button>
+    </div>
+</div>
+
+<script>
+    const quizForm = document.getElementById('quiz-form');
+    quizForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        fetch('{% url "quiz" %}', {
+            method: 'POST',
+            body: new FormData(this),
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('score-message').textContent = `Your score: ${data.score}/5. ${data.message}`;
+            document.getElementById('resultModal').style.display = 'block';
+        });
+    });
+    
+    document.querySelector('.close').addEventListener('click', function() {
+        document.getElementById('resultModal').style.display = 'none';
+    });
+    
+    document.getElementById('submit-score').addEventListener('click', function() {
+        // Add logic for submitting score if needed
+        alert('Score submitted!');
+        document.getElementById('resultModal').style.display = 'none';
+    });
+    
+    document.getElementById('cancel').addEventListener('click', function() {
+        document.getElementById('resultModal').style.display = 'none';
+    });
+</script>
+
+{% endblock %}

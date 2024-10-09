@@ -64,6 +64,8 @@ class ScoresPage(TemplateView):
     Displays scores page
     """
     template_name = 'scores.html'
+    # template_name = 'base.html'
+    template_name = 'index.html'
 
 
 class UserRegistrationView(CreateView):
@@ -72,3 +74,25 @@ class UserRegistrationView(CreateView):
     """
     form_class = UserRegistrationForm
     template_name = "accounts/registration/registration-user.html"
+
+
+class UserSuccessView(TemplateView):
+    """
+    Displays user registration success page
+    """
+    template_name = "accounts/registration/registration-success.html"
+
+class UserLoginView(LoginView):
+    """
+    Displays login page
+    """
+    form_class = UserLoginForm
+    template_name = 'accounts/login-user.html'
+    success_url = reverse_lazy('home')
+
+    def get_success_url(self):
+        return self.success_url
+
+# logout
+class UserLogoutView(LogoutView):
+    next_page = reverse_lazy('home')

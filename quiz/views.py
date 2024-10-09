@@ -3,12 +3,15 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 
 # Create your views here.
-def my_quiz(request):
-    return HttpResponse("Lets build a great, fun, quiz app!")
+class QuizPage(TemplateView):
+    """
+    Displays quiz page"
+    """
+    template_name = 'base.html'
 
 
 class HomePage(TemplateView):
     """
     Displays home page"
     """
-    template_name = 'index.html'
+    template_name = 'base.html'

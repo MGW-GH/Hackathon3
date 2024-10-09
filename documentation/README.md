@@ -147,7 +147,8 @@ https://quiz-heads-c1d86a4688ff.herokuapp.com
 - Initial wireframes https://scene.io
 - Colour scheme http://colormind.io/
 - Question generation https://perplexity.ai
-
+- Wizard icons created by Freepik - Flaticon <a href="https://www.flaticon.com/free-icons/wizard" title="wizard icons">
+- 
 ## Future features
 
 Future planned features added to backlog for next iteration.

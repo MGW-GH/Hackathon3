@@ -35,8 +35,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-mgwgh-hackathon3-bwhosp7hnkm.ws.codeinstitute-ide.net', # Matt
+    '8000-mgwgh-hackathon3-bwhosp7hnkm.ws.codeinstitute-ide.net', # Dave
     '8000-mgwgh-hackathon3-amurexk4ww1.ws.codeinstitute-ide.net', # Charles
+    '8000-mgwgh-hackathon3-553n9riw25z.ws.codeinstitute-ide.net', # Matt
     '.herokuapp.com',
     ]
 
@@ -88,18 +89,16 @@ WSGI_APPLICATION = 'hackathon3.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
 DATABASES = {
-   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
-
+# DATABASES = {
+#   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 
 
 # Password validation

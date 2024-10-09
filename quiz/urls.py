@@ -6,5 +6,4 @@ urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
     # Registration Page
     path("UserRegistration/", UserRegistration.as_view(), name="UserRegistration"),
-
 ]

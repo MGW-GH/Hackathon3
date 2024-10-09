@@ -73,7 +73,7 @@ Example Messaging:
 ![ui image 2]()
 
 - Initial designs produced using https://app.scene.io/ 
-- Design rolled back to a simple two page design during the iterative process.
+- Design rolled back to a simple three page design during the iterative process.
 
 ### Colour scheme
 
@@ -150,6 +150,7 @@ https://quiz-heads-c1d86a4688ff.herokuapp.com
 - Wizard icons created by Freepik - Flaticon https://www.flaticon.com/free-icons/wizard
 - Quiz Wizard image https://pro-quiz-wizard.netlify.app/
 - Quizards text logo https://www.textstudio.com/
+- Stackoverflow https://stackoverflow.co/
   
 ## Future features
 

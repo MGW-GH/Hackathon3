@@ -25,6 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -54,6 +56,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'quiz',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -85,6 +89,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hackathon3.wsgi.application'
 
+# Redirects 
+LOGIN_REDIRECT_URL = "home"
+
+# User Registration
+AUTH_USER_MODEL = 'quiz.CustomUserModel'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

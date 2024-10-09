@@ -10,35 +10,34 @@
                 <img src="/static/images/quizzard-img.webp" alt="Quizard character">
             </div>
         </div>
-        <div class="box-element question-card mx-auto ">
-            
+        <div class="box-element question-card mx-auto">
+            {% if user.is_authenticated %}
             <form method="post" id="quiz-form">
                 {% csrf_token %}
                 {% for question in questions %}
-                    <div class="question">
-                        <p>{{ forloop.counter }}. <strong>{{ question.question }}</strong></p>
-                        <input type="radio" name="q{{ forloop.counter }}" value="A" id="q{{ forloop.counter }}-A">
-                        <label for="q{{ forloop.counter }}-A">A) {{ question.option_a }}</label><br>
-                        <input type="radio" name="q{{ forloop.counter }}" value="B" id="q{{ forloop.counter }}-B">
-                        <label for="q{{ forloop.counter }}-B">B) {{ question.option_b }}</label><br>
-                        <input type="radio" name="q{{ forloop.counter }}" value="C" id="q{{ forloop.counter }}-C">
-                        <label for="q{{ forloop.counter }}-C">C) {{ question.option_c }}</label><br>
-                        <input type="radio" name="q{{ forloop.counter }}" value="D" id="q{{ forloop.counter }}-D">
-                        <label for="q{{ forloop.counter }}-D">D) {{ question.option_d }}</label>
-                    </div>
-                    <hr>
+                <div class="question">
+                    <p>{{ forloop.counter }}. <strong>{{ question.question }}</strong></p>
+                    <input type="radio" name="q{{ forloop.counter }}" value="A" id="q{{ forloop.counter }}-A">
+                    <label for="q{{ forloop.counter }}-A">A) {{ question.option_a }}</label><br>
+                    <input type="radio" name="q{{ forloop.counter }}" value="B" id="q{{ forloop.counter }}-B">
+                    <label for="q{{ forloop.counter }}-B">B) {{ question.option_b }}</label><br>
+                    <input type="radio" name="q{{ forloop.counter }}" value="C" id="q{{ forloop.counter }}-C">
+                    <label for="q{{ forloop.counter }}-C">C) {{ question.option_c }}</label><br>
+                    <input type="radio" name="q{{ forloop.counter }}" value="D" id="q{{ forloop.counter }}-D">
+                    <label for="q{{ forloop.counter }}-D">D) {{ question.option_d }}</label>
+                </div>
+                <hr>
                 {% endfor %}
 
-                <button type="submit">Submit</button>
+                <button type="submit" class="btn btn-warning">Submit</button>
             </form>
-
+            {% else %}
+            <p>You must be signed in to take the quiz.</p>
+            <a href="{% url 'login' %}" class="btn btn-warning">Login/Signup</a>
+            {% endif %}
         </div>
     </div>
 
 </div>
 
 {% endblock content %}
-
-<!-- {% if user.is_authenticated %}
-			{% else %}
-			{% endif %} -->

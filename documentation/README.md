@@ -1,8 +1,8 @@
-![Logo/header img]()
+![Logo/header img](/documentation/readme-images/quizards-text-logo.webp) ![Quizard img](/documentation/readme-images/quizzard-img.webp)
 
-# Project overview
+# Project overview 
 
-(The quiz app name pending) is a digital platform for Trivia enthusiasts. Built with Django, it allows registered users to tackle 5 quiz questions daily. With a user-friendly interface and engaging content, it aims to make learning convenient and interactive. 
+Quizards is a digital platform for Trivia enthusiasts. Built with Django, it allows registered users to tackle 5 quiz questions daily. With a user-friendly interface and engaging content, it aims to make learning convenient and interactive. 
 
 This daily quiz format aims to set the app apart by fostering consistent engagement while enhancing general knowledge retention.
 
@@ -16,7 +16,7 @@ https://quiz-heads-c1d86a4688ff.herokuapp.com
 
 ### How To Play
 
-Sign up/sign in as a user, quizes will then be available for completion. Quizes will be presented in multiple choice formats of 5 questions, feedback on scores will be presented on completion.
+Sign up/sign in as a user, quizzes will then be available for completion. Quizzes will be presented in multiple choice formats of 5 questions, feedback on scores will be presented on completion.
 
 # List of features
 
@@ -59,7 +59,7 @@ Example Messaging:
 
 ### Website Structure
 - Home Section: Welcome message, quick overview, and CTA to register/login.  
-- Daily Quiz Details: Explain daily quizzes and benefits.  
+- Daily Quiz Details: Explain daily  and benefits.  
 - How It Works: Step-by-step guide to engaging with content.  
 - User Testimonials: Reviews from enthusiastic learners.  
 - Benefits: Clear bullet points on learning and engagement advantages.  
@@ -103,9 +103,9 @@ This decision not only streamlined the design process but also allowed us to foc
 
 ![ERD Diamgram](/documentation/readme-images/erd-img.png)
 
-Database Schema Entity Relationship Diagram (ERD) for (The quiz app name pending) displaying relationships between feature components saved within the database
+Database Schema Entity Relationship Diagram (ERD) for Quizards displaying relationships between feature components saved within the database
 
-Lucidchart was used to create the ERD for (The quiz app name pending). To satisfy the application needs, models were created for the project. These include:
+Lucidchart was used to create the ERD for Quizards. To satisfy the application needs, models were created for the project. These include:
 
 - **User** (User is created on signup, linked to results)
 - **Questions** (Questions model exits in database to store and return questions)
@@ -147,8 +147,10 @@ https://quiz-heads-c1d86a4688ff.herokuapp.com
 - Initial wireframes https://scene.io
 - Colour scheme http://colormind.io/
 - Question generation https://perplexity.ai
-- Wizard icons created by Freepik - Flaticon <a href="https://www.flaticon.com/free-icons/wizard" title="wizard icons">
-- 
+- Wizard icons created by Freepik - Flaticon https://www.flaticon.com/free-icons/wizard
+- Quiz Wizard image https://pro-quiz-wizard.netlify.app/
+- Quizards text logo https://www.textstudio.com/
+  
 ## Future features
 
 Future planned features added to backlog for next iteration.

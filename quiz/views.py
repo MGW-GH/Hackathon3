@@ -12,7 +12,7 @@ class QuizPage(TemplateView):
     """
     Displays quiz page
     """
-    template_name = 'base.html'
+    template_name = 'quiz.html'
 
 
 class HomePage(TemplateView):

@@ -26,7 +26,7 @@ class Question(models.Model):
 
 OPTIONS = ((0, "A"), (1, "B"), (2, "C"), (3, "D"))
 
-# Answer model
+# Multiple choice question model
 class Multiple_choice_trivia(models.Model):
     question = models.CharField(max_length=256, unique=True)
     option_a = models.CharField(max_length=100, unique=False)

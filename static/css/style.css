@@ -7,6 +7,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .box-element{
+	border: solid 1px rgb(0, 119, 255);
 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
 	background-color: #fff;
 	border-radius: 4px;

@@ -3,46 +3,30 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-8 mx-auto">
         <div class="quiz-page-header">
-            <img src="/static/images/quizards-text-logo.webp" alt="Quizards text logo"><img
+            <img src="/static/images/quizards-text-logo.webp" alt="Quizards text logo"><img class=".d-sm"
                 src="/static/images/quizzard-img.webp" alt="Quizard character">
         </div>
         <div class="box-element question-card mx-auto">
-            <h2 class="question-title">Question 1</h2>
-            <hr>
-            <h3>What is the largest ocean?</h3><br>
-            <input type="radio" id="answer-a" name="age" value="30">
-            <label for="answer-a">A] Atlantic ocean</label><br>
-            <input type="radio" id="answer-b" name="age" value="60">
-            <label for="answer-b">B] Indian ocean</label><br>
-            <input type="radio" id="answer-c" name="age" value="100">
-            <label for="answer-c">C] Arctic ocean</label><br>
-            <input type="radio" id="answer-d" name="age" value="100">
-            <label for="answer-d">D] Pacific ocean</label><br>
-            <input type="submit" value="Submit">
-            <!-- <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio1">A] Atlantic Ocean</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio2" name="customRadio2" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">B] Indian Ocean</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio3">C] Arctic Ocean</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio4" name="customRadio4" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio4">D] Pacific Ocean</label>
-            </div> -->
             <!-- {% if user.is_authenticated %}
-			
 			{% else %}
-			
 			{% endif %} -->
+            <form id="quiz-form">
+                <div class="question">
+                    <p>What is the capital of France?</p>
+                    <input type="radio" name="q1" value="A" id="q1a">
+                    <label for="q1a">A) London</label><br>
+                    <input type="radio" name="q1" value="B" id="q1b">
+                    <label for="q1b">B) Berlin</label><br>
+                    <input type="radio" name="q1" value="C" id="q1c">
+                    <label for="q1c">C) Paris</label><br>
+                    <input type="radio" name="q1" value="D" id="q1d">
+                    <label for="q1d">D) Rome</label>
+                </div>
 
+                <button type="submit">Submit</button>
+            </form>
 
         </div>
     </div>

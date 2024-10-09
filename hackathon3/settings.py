@@ -90,7 +90,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'hackathon3.wsgi.application'
 
 # Redirects 
-LOGIN_REDIRECT_URL = "home"
+#LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+#LOGOUT_REDIRECT_URL = 'home' 
 
 # User Registration
 AUTH_USER_MODEL = 'quiz.CustomUserModel'

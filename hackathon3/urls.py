@@ -21,7 +21,6 @@ from quiz.views import QuizPage, ScoresPage, UserRegistration
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('registration-user/', UserRegistration.as_view(), name='registration'),
     path('quiz/', QuizPage.as_view(), name='quiz'),
     path('', include('quiz.urls'), name='home'),
 ]

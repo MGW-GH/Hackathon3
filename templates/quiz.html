@@ -12,18 +12,22 @@
         </div>
         <div class="box-element question-card mx-auto ">
             
-            <form id="quiz-form">
-                <div class="question">
-                    <p><strong>What is the capital of France?</strong></p>
-                    <input type="radio" name="q1" value="A" id="q1a">
-                    <label for="q1a">A) London</label><br>
-                    <input type="radio" name="q1" value="B" id="q1b">
-                    <label for="q1b">B) Berlin</label><br>
-                    <input type="radio" name="q1" value="C" id="q1c">
-                    <label for="q1c">C) Paris</label><br>
-                    <input type="radio" name="q1" value="D" id="q1d">
-                    <label for="q1d">D) Rome</label>
-                </div>
+            <form method="post" id="quiz-form">
+                {% csrf_token %}
+                {% for question in questions %}
+                    <div class="question">
+                        <p>{{ forloop.counter }}. <strong>{{ question.question }}</strong></p>
+                        <input type="radio" name="q{{ forloop.counter }}" value="A" id="q{{ forloop.counter }}-A">
+                        <label for="q{{ forloop.counter }}-A">A) {{ question.option_a }}</label><br>
+                        <input type="radio" name="q{{ forloop.counter }}" value="B" id="q{{ forloop.counter }}-B">
+                        <label for="q{{ forloop.counter }}-B">B) {{ question.option_b }}</label><br>
+                        <input type="radio" name="q{{ forloop.counter }}" value="C" id="q{{ forloop.counter }}-C">
+                        <label for="q{{ forloop.counter }}-C">C) {{ question.option_c }}</label><br>
+                        <input type="radio" name="q{{ forloop.counter }}" value="D" id="q{{ forloop.counter }}-D">
+                        <label for="q{{ forloop.counter }}-D">D) {{ question.option_d }}</label>
+                    </div>
+                    <hr>
+                {% endfor %}
 
                 <button type="submit">Submit</button>
             </form>

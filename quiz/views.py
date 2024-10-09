@@ -24,7 +24,6 @@ from . forms import UserRegistrationForm, UserLoginForm
 #     return render(request, 'quiz/templates/quiz.html', context)
 
 def QuizPage(request):
-    print("Im here and I'm being called")
     questions = Multiple_choice_trivia.objects.all().order_by('?')[:5]  # Get 5 random questions
     context = {'questions': questions}
     

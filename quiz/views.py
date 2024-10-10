@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from django.views.generic import TemplateView, CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.views import LoginView, LogoutView
 from .models import Multiple_choice_trivia
+from django.contrib.auth.views import LoginView, LogoutView
 from django import forms
+from django.http import JsonResponse
+
+
 from . forms import UserRegistrationForm, UserLoginForm
 
 
@@ -56,22 +59,8 @@ class HomePage(TemplateView):
     """
     Displays home page
     """
-    #template_name = 'base.html'
+    # template_name = 'base.html'
     template_name = 'index.html'
-
-
-class ScoresPage(TemplateView):
-    """
-    Displays scores page
-    """
-    template_name = 'base.html'
-
-
-class ScoresPage(TemplateView):
-    """
-    Displays scores page
-    """
-    template_name = 'scores.html'
 
 
 class UserRegistrationView(CreateView):
@@ -103,26 +92,10 @@ class UserLoginView(LoginView):
 # logout
 class UserLogoutView(LogoutView):
     next_page = reverse_lazy('home')
-    success_url = reverse_lazy('user_registration_success')
 
 
-class UserSuccessView(TemplateView):
+class ScoresPage(TemplateView):
     """
-    Displays user registration success page
+    Displays scores page
     """
-    template_name = "accounts/registration/registration-success.html"
-
-class UserLoginView(LoginView):
-    """
-    Displays login page
-    """
-    form_class = UserLoginForm
-    template_name = 'accounts/login-user.html'
-    success_url = reverse_lazy('home')
-
-    def get_success_url(self):
-        return self.success_url
-
-# logout
-class UserLogoutView(LogoutView):
-    next_page = reverse_lazy('home')
+    template_name = 'scores.html'

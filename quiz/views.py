@@ -19,6 +19,8 @@ def QuizPage(request):
 
         for question in questions:
             selected_answer = request.POST.get(f'q-{question.question}')
+            print(question.question)
+            print(selected_answer)
             if selected_answer == 'A':
                 selected_answer = 0
             if selected_answer == 'B':

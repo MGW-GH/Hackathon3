@@ -42,9 +42,9 @@ def QuizPage(request):
 
 def get_score_message(score):
     if score == 5:
-        return "By the shimmering stars of knowledge! You’ve achieved a perfect score! You, dear quizzing champion, have proven yourself a master of trivia magic! May your wand always point to wisdom!"
+        return "By the shimmering stars of knowledge! ✨ You’ve achieved a perfect score! ✨ You, dear quizzing champion, have proven yourself a master of trivia magic! May your wand always point to wisdom!"
     elif score == 4:
-        return "Ah, a splendid score indeed! Four out of five! You’re nearly a wizard of trivia yourself! Just a sprinkle more practice, and you shall join the ranks of the great Quizmasters!"
+        return "Ah, a splendid score indeed! ✨ Four out of five! ✨ You’re nearly a wizard of trivia yourself! Just a sprinkle more practice, and you shall join the ranks of the great Quizmasters!"
     elif score == 3:
         return "Aha! Three out of five! Not too shabby, my intrepid learner! With a bit more curiosity and perhaps a few more potions of knowledge, you’ll soon be conjuring up even greater scores!"
     elif score == 2:

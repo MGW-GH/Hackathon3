@@ -94,3 +94,10 @@ class UserLoginView(LoginView):
 # logout
 class UserLogoutView(LogoutView):
     next_page = reverse_lazy('home')
+
+
+class ScoresPage(TemplateView):
+    """
+    Displays scores page
+    """
+    template_name = 'scores.html'

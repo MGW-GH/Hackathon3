@@ -6,10 +6,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
 from .models import Multiple_choice_trivia
 from django import forms
-
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.views import LoginView, LogoutView
-
 from . forms import UserRegistrationForm, UserLoginForm
 
 

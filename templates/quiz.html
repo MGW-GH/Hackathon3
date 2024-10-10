@@ -43,7 +43,7 @@
 </div>
 
 <!-- Modal -->
-<div id="resultModal" class="modal" style="display:none;">
+<!-- <div id="resultModal" class="modal" style="display:none;">
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Quiz Result</h2>
@@ -51,7 +51,28 @@
         <button id="submit-score">Submit Score</button>
         <button id="cancel">Cancel</button>
     </div>
-</div>
+</div> -->
+
+<!-- bootstrap modal -->
+<div id="resultModal" class="modal modal-backdrop" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Quiz result</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="score-message"></p>
+        </div>
+        <div class="modal-footer">
+          <button id="cancel" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <a id="submit-score" href="/quiz" class="btn btn-warning">Submit score</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <script>
     const quizForm = document.getElementById('quiz-form');

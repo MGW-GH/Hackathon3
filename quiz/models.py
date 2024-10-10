@@ -38,3 +38,12 @@ class Multiple_choice_trivia(models.Model):
     def __str__(self):
         return f"{self.question}"
 
+# User answer model
+class UserAnswer(models.Model):
+    trivia_question = models.ForeignKey(Multiple_choice_trivia, on_delete=models.CASCADE)
+    selected_answer = models.IntegerField(choices=OPTIONS)
+    is_correct = models.BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        self.is_correct = (self.selected_answer == trivia_question.answer)
+        super().save(*args, **kwargs)

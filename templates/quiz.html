@@ -3,50 +3,88 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-8 mx-auto">
         <div class="quiz-page-header">
-            <img src="/static/images/quizards-text-logo.webp" alt="Quizards text logo"><img
-                src="/static/images/quizzard-img.webp" alt="Quizard character">
+            <img src="/static/images/quizards-text-logo.webp" alt="Quizards text logo">
+            <div>
+                <img src="/static/images/quizzard-img.webp" alt="Quizard character">
+            </div>
         </div>
         <div class="box-element question-card mx-auto">
-            <h2 class="question-title">Question 1</h2>
-            <hr>
-            <h3>What is the largest ocean?</h3><br>
-            <input type="radio" id="answer-a" name="age" value="30">
-            <label for="answer-a">A] Atlantic ocean</label><br>
-            <input type="radio" id="answer-b" name="age" value="60">
-            <label for="answer-b">B] Indian ocean</label><br>
-            <input type="radio" id="answer-c" name="age" value="100">
-            <label for="answer-c">C] Arctic ocean</label><br>
-            <input type="radio" id="answer-d" name="age" value="100">
-            <label for="answer-d">D] Pacific ocean</label><br>
-            <input type="submit" value="Submit">
-            <!-- <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio1">A] Atlantic Ocean</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio2" name="customRadio2" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">B] Indian Ocean</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio3">C] Arctic Ocean</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio4" name="customRadio4" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio4">D] Pacific Ocean</label>
-            </div> -->
-            <!-- {% if user.is_authenticated %}
-			
-			{% else %}
-			
-			{% endif %} -->
+            {% if user.is_authenticated %}
+            <form method="post" id="quiz-form">
+                {% csrf_token %}
+                {% for question in questions %}
+                <div class="question">
+                    <p>{{ forloop.counter }}. <strong>{{ question.question }}</strong></p>
+                    <input type="hidden" name="question_id" value="{{ question.question }}">
 
+                    <input type="radio" name="q-{{ question.question }}" value="A" id="q{{ forloop.counter }}_a" required>
+                    <label for="q{{ forloop.counter }}_a">A) {{ question.option_a }}</label><br>
+                    <input type="radio" name="q-{{ question.question }}" value="B" id="q{{ forloop.counter }}_b">
+                    <label for="q{{ forloop.counter }}_b">B) {{ question.option_b }}</label><br>
+                    <input type="radio" name="q-{{ question.question }}" value="C" id="q{{ forloop.counter }}_c">
+                    <label for="q{{ forloop.counter }}_c">C) {{ question.option_c }}</label><br>
+                    <input type="radio" name="q-{{ question.question }}" value="D" id="q{{ forloop.counter }}_d">
+                    <label for="q{{ forloop.counter }}_d">D) {{ question.option_d }}</label>
+                </div>
+                <hr>
+                {% endfor %}
 
+                <button type="submit" class="btn btn-warning">Submit</button>
+            </form>
+            {% else %}
+            <p>You must be signed in to take the quiz.</p>
+            <a href="{% url 'login' %}" class="btn btn-warning">Login/Signup</a>
+            {% endif %}
         </div>
     </div>
 
 </div>
 
-{% endblock content %}
+<!-- Modal -->
+<div id="resultModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Quiz Result</h2>
+        <p id="score-message"></p>
+        <button id="submit-score">Submit Score</button>
+        <button id="cancel">Cancel</button>
+    </div>
+</div>
+
+<script>
+    const quizForm = document.getElementById('quiz-form');
+    quizForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        fetch('{% url "quiz" %}', {
+            method: 'POST',
+            body: new FormData(this),
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('score-message').textContent = `Your score: ${data.score}/5. ${data.message}`;
+            document.getElementById('resultModal').style.display = 'block';
+        });
+    });
+    
+    document.querySelector('.close').addEventListener('click', function() {
+        document.getElementById('resultModal').style.display = 'none';
+    });
+    
+    document.getElementById('submit-score').addEventListener('click', function() {
+        // Add logic for submitting score if needed
+        //alert('Score submitted!');
+        document.getElementById('resultModal').style.display = 'none';
+    });
+    
+    document.getElementById('cancel').addEventListener('click', function() {
+        document.getElementById('resultModal').style.display = 'none';
+    });
+</script>
+
+{% endblock %}

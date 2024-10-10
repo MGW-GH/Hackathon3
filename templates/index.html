@@ -1,9 +1,31 @@
-{% extends 'templates/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="quiz-page-header">
+            <img src="/static/images/quizards-text-logo.webp" alt="Quizards text logo">
+            <div>
+                <img src="/static/images/quizzard-img.webp" alt="Quizard character">
+            </div>
+        </div>
+        <div class="box-element question-card mx-auto">
+            <h1 class="welcome-header">Welcome to Quizards</h1>
+            <hr>
+            <p>✨ Tally-ho, brave quizzers! I am Quiznarg, your whimsical quizzing wizard, here to sprinkle a dash of magic
+                on your quest for knowledge! Prepare to embark on a journey filled with enchanting questions and
+                delightful challenges. As you traverse the realms of trivia. Remember, every answer brings you closer to
+                unlocking the secrets of the universe! So grab your wand—uh, I mean, your thinking cap and let the
+                quizzing begin! ✨</p>
+            <hr>
+            <div class="start-btn">
+                <a href="{% url 'quiz' %}" class="btn btn-warning large-btn">Start quiz!</a>
+            </div>
+        </div>
+    </div>
 
-<div>
-    <h1>Hello Django From Heroku</h1>
-    
 </div>
 
+
+{% endblock %}

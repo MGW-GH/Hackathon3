@@ -6,14 +6,6 @@ Quizards is a digital platform for Trivia enthusiasts. Built with Django, it all
 
 This daily quiz format aims to set the app apart by fostering consistent engagement while enhancing general knowledge retention.
 
-### Live site
-
-https://quiz-heads-c1d86a4688ff.herokuapp.com
-
-![am I responsive img]()
-
-![am I responsive img]()
-
 ### How To Play
 
 Sign up/sign in as a user, quizzes will then be available for completion. Quizzes will be presented in multiple choice formats of 5 questions, feedback on scores will be presented on completion.
@@ -70,8 +62,6 @@ Example Messaging:
 
 ![ui image 1](/documentation/readme-images/wireframes-img.png)
 
-![ui image 2]()
-
 - Initial designs produced using https://app.scene.io/ 
 - Design rolled back to a simple three page design during the iterative process.
 
@@ -91,7 +81,7 @@ Variables were used within the CSS file to call colours as they were needed:
 
 Initial colour schemes were produced using http://colormind.io/ colour palette was chosen to be cohesive, while being bright and engaging.
 
-Adjustments from initial designs were made where there were any accessability issue relating to choices.
+Adjustments from initial designs were made where there was any accessability issue relating to choices.
 
 ### Typography & Iconography
 
@@ -130,13 +120,14 @@ All CSS run through Jigsaw validator no issues.
 ![css valid img1]() ![css valid img2]()
 
 ## Lighthouse
+
+![lighthouse scores performance](/documentation/readme-images/quizzards_lighthouse.png)
+
 All pages run through Lighthouse to check scores. 
 
- - Bullet points for issues and resolves
+![lighthouse scores img1](/documentation/readme-images/lighthouse-2-img.png) ![lighthouse scores img2](/documentation/readme-images/lighthouse-3-img.png)
 
-![lighthouse scores img1]()
-![lighthouse scores img2]()
-
+Acceptable scores in all categories. No major issues.
 
 ## Deployment
 
@@ -154,10 +145,9 @@ https://quiz-heads-c1d86a4688ff.herokuapp.com
   
 ## Future features
 
-Future planned features added to backlog for next iteration.
+Future planned features added to backlog for next iteration include:
 
-#### Example feature 1 etc
-
-## Known Bugs
-
-Known bugs here!
+- Categories of questions
+- Ability for users to add questions to the site once approved
+- Ensure questions already answered wont be repeated for the same user
+- Users can answer 5 daily questions and this cannot be repeated

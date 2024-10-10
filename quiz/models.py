@@ -46,5 +46,5 @@ class UserAnswer(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
-        self.is_correct = (self.selected_answer == trivia_question.answer)
+        self.is_correct = (self.selected_answer == self.trivia_question.answer)
         super().save(*args, **kwargs)

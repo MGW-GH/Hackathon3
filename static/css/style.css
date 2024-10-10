@@ -115,5 +115,10 @@ h6 {
 .form-buttons {
 	display: flex;
 	justify-content: center;
-	margin-left: auto;
 }
+
+.login-message-button{
+	display: flex;
+	justify-content: center;
+}
+

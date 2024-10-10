@@ -19,7 +19,8 @@
                     <p>{{ forloop.counter }}. <strong>{{ question.question }}</strong></p>
                     <input type="hidden" name="question_id" value="{{ question.question }}">
 
-                    <input type="radio" name="q-{{ question.question }}" value="A" id="q{{ forloop.counter }}_a" required>
+                    <input type="radio" name="q-{{ question.question }}" value="A" id="q{{ forloop.counter }}_a"
+                        required>
                     <label for="q{{ forloop.counter }}_a">A) {{ question.option_a }}</label><br>
                     <input type="radio" name="q-{{ question.question }}" value="B" id="q{{ forloop.counter }}_b">
                     <label for="q{{ forloop.counter }}_b">B) {{ question.option_b }}</label><br>
@@ -36,7 +37,9 @@
             {% else %}
             <p>You must be signed in to take the quiz.</p>
             <hr>
-            <a href="{% url 'login' %}" class="btn btn-warning">Login/Signup</a>
+            <div class="login-message-button">
+                <a href="{% url 'login' %}" class="btn btn-warning large-btn">Login/Signup</a>
+            </div>
             {% endif %}
         </div>
     </div>
@@ -57,27 +60,27 @@
 <!-- bootstrap modal -->
 <div id="resultModal" class="modal modal-backdrop" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Quiz result</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Quiz result</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="score-message"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a id="submit-score" href="/quiz" class="btn btn-warning">Submit score</a>
+            </div>
         </div>
-        <div class="modal-body">
-          <p id="score-message"></p>
-        </div>
-        <div class="modal-footer">
-          <button id="cancel" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <a id="submit-score" href="/quiz" class="btn btn-warning">Submit score</a>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
 <script>
     const quizForm = document.getElementById('quiz-form');
-    quizForm.addEventListener('submit', function(event) {
+    quizForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
         fetch('{% url "quiz" %}', {
@@ -87,24 +90,24 @@
                 'X-CSRFToken': '{{ csrf_token }}'
             }
         })
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('score-message').textContent = `Your score: ${data.score}/5. ${data.message}`;
-            document.getElementById('resultModal').style.display = 'block';
-        });
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('score-message').textContent = `Your score: ${data.score}/5. ${data.message}`;
+                document.getElementById('resultModal').style.display = 'block';
+            });
     });
-    
-    document.querySelector('.close').addEventListener('click', function() {
+
+    document.querySelector('.close').addEventListener('click', function () {
         document.getElementById('resultModal').style.display = 'none';
     });
-    
-    document.getElementById('submit-score').addEventListener('click', function() {
+
+    document.getElementById('submit-score').addEventListener('click', function () {
         // Add logic for submitting score if needed
         //alert('Score submitted!');
         document.getElementById('resultModal').style.display = 'none';
     });
-    
-    document.getElementById('cancel').addEventListener('click', function() {
+
+    document.getElementById('cancel').addEventListener('click', function () {
         document.getElementById('resultModal').style.display = 'none';
     });
 </script>

@@ -12,11 +12,14 @@
     </div>
     <div class="box-element question-card mx-auto">
         <h2 class="welcome-header">Sign up</h2>
+        <hr>
         <div>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn btn-warning large-btn">Sign up</button>
+                <div class="start-btn">
+                    <button type="submit" class="btn btn-warning large-btn">Sign up</button>
+                </div>
             </form>
         </div>
     </div>

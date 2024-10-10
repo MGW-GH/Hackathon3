@@ -1,79 +1,87 @@
-body{
+body {
 	background-color: hsl(0, 5%, 91%);
 }
 
-h1,h2,h3,h4,h5,h6{
-	color:hsl(0, 0%, 30%);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: hsl(0, 0%, 30%);
 }
 
-.box-element{
+.box-element {
 	border: solid 1px rgb(0, 119, 255);
-	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	box-shadow: hsl(0, 0%, 80%) 0 0 16px;
 	background-color: #fff;
 	border-radius: 4px;
 	padding: 10px;
 }
 
-.thumbnail{
+.thumbnail {
 	width: 100%;
 	height: fit-content;
 }
 
-.bg-dark{
-	background-color: #333333!important;
+.bg-dark {
+	background-color: #333333 !important;
 }
 
-.nav-link{
-    color: #FFFFFF!important;
+.nav-link {
+	color: #FFFFFF !important;
 }
 
-.nav-link:hover{
-    border-bottom: 1px solid #FFFFFF;
+.nav-link:hover {
+	border-bottom: 1px solid #FFFFFF;
 }
 
-.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+.col-lg-4,
+.col-lg-6,
+.col-lg-8,
+.col-lg-12 {
 	margin-top: 10px;
 }
 
-.btn{
+.btn {
 	border-radius: 5px;
 }
 
-.btn-warning{
-    background-color: #FFEA00!important;
+.btn-warning {
+	background-color: #FFEA00 !important;
 }
 
-.row-image{
+.row-image {
 	width: 100px;
 }
 
-.form-field{
-	width:250px;
+.form-field {
+	width: 250px;
 	display: inline-block;
 	padding: 5px;
 }
 
-.hidden{
-	display: none!important;
+.hidden {
+	display: none !important;
 }
 
-.user-status{
-	color: #ffffff!important;
+.user-status {
+	color: #ffffff !important;
 }
 
-.btn-signup{
+.btn-signup {
 	border: 2px solid rgb(35, 35, 35);
 }
 
 .helptext {
 	visibility: hidden;
-  }
+}
 
-.question-card{
+.question-card {
 	margin-bottom: 20px;
 }
 
-.quiz-page-header{
+.quiz-page-header {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -81,32 +89,40 @@ h1,h2,h3,h4,h5,h6{
 	margin: auto;
 }
 
-.welcome-header{
+.welcome-header {
 	font-size: x-large;
 	color: #333333;
 }
 
-.start-btn{
+.start-btn {
 	display: flex;
 	justify-content: center;
 }
 
-.large-btn{
+.large-btn {
 	padding: 0.75em 1em;
 	font-size: larger;
 }
 
-.modal-backdrop{
+.modal-backdrop {
 	background-color: rgba(0, 0, 0, 0.33);
 }
 
-.login-page{
-	min-width:75%;
+.login-page {
+	min-width: 75%;
 }
 
+.form-buttons {
+	display: flex;
+	justify-content: center;
+}
 
+.login-message-button {
+	display: flex;
+	justify-content: center;
+}
 
-
-
-
-
+.scores-center{
+	display: flex;
+	justify-content: center;
+}

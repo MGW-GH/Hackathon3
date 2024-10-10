@@ -25,7 +25,7 @@
                         <td>{{ user.username }}</td>
                         <td>{{ user.correct_answers }}</td>
                         <td>{{ user.total_answers }}</td>
-                        <td>{{ user.percentage_correct|floatformat:2 }}%</td>
+                        <td>{{ user.percentage_correct|floatformat:0 }}%</td>
                     </tr>
                     {% empty %}
                     <tr>

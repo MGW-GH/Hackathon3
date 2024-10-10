@@ -316,4 +316,3 @@ Future planned features added to backlog for next iteration include:
 - Ability for users to add questions to the site once approved
 - Ensure questions already answered wont be repeated for the same user
 - Users can answer 5 daily questions and this cannot be repeated
-

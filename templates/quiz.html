@@ -35,6 +35,7 @@
             </form>
             {% else %}
             <p>You must be signed in to take the quiz.</p>
+            <hr>
             <a href="{% url 'login' %}" class="btn btn-warning">Login/Signup</a>
             {% endif %}
         </div>

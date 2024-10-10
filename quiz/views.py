@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView, CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from .models import Multiple_choice_trivia
+from .models import Multiple_choice_trivia, UserAnswer
 from django.contrib.auth.views import LoginView, LogoutView
 from django import forms
 from django.http import JsonResponse
@@ -99,3 +99,17 @@ class ScoresPage(TemplateView):
     Displays scores page
     """
     template_name = 'scores.html'
+
+
+def quiz_answer(request, question_id):
+    trivia_question = Multiple_choice_trivia.objects.get(id=question_id)
+    
+    if request.method == "POST":
+        selected_answer = int(request.POST.get('answer'))
+        user_answer = UserAnswer(trivia_question=trivia_question, selected_answer=selected_answer)
+        user_answer.save()  # This will set is_correct automatically in the save method
+
+        # Redirect to a results page or display a message
+        return redirect('quiz_results')  # Adjust as needed
+    
+    return render(request, 'quiz/question.html', {'question': trivia_question})

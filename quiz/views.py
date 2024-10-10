@@ -5,6 +5,11 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
 from .models import Multiple_choice_trivia
+from django import forms
+
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LoginView, LogoutView
+
 from . forms import UserRegistrationForm, UserLoginForm
 
 
@@ -63,9 +68,7 @@ class ScoresPage(TemplateView):
     """
     Displays scores page
     """
-    template_name = 'scores.html'
-    # template_name = 'base.html'
-    template_name = 'index.html'
+    template_name = 'base.html'
 
 
 class ScoresPage(TemplateView):
@@ -83,6 +86,29 @@ class UserRegistrationView(CreateView):
     template_name = "accounts/registration/registration-user.html"
     success_url = reverse_lazy('user_registration_success')
     
+
+class UserSuccessView(TemplateView):
+    """
+    Displays user registration success page
+    """
+    template_name = "accounts/registration/registration-success.html"
+
+class UserLoginView(LoginView):
+    """
+    Displays login page
+    """
+    form_class = UserLoginForm
+    template_name = 'accounts/login-user.html'
+    success_url = reverse_lazy('home')
+
+    def get_success_url(self):
+        return self.success_url
+
+# logout
+class UserLogoutView(LogoutView):
+    next_page = reverse_lazy('home')
+    success_url = reverse_lazy('user_registration_success')
+
 
 class UserSuccessView(TemplateView):
     """

@@ -1,16 +1,13 @@
 from . import views
 from django.urls import path
-from quiz.views import QuizPage, HomePage, UserRegistration, ScoresPage
 #from django.contrib.auth import views as auth_views
-from quiz.views import QuizPage, HomePage, UserRegistrationView, UserSuccessView, UserLoginView, UserLogoutView
+from quiz.views import QuizPage, HomePage, ScoresPage, UserRegistrationView, UserSuccessView, UserLoginView, UserLogoutView
 
 urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
-    # Registration Page
-    path("UserRegistration/", UserRegistration.as_view(), name="UserRegistration"),
     # Scores Page
     path('scores/', ScoresPage.as_view(), name='scores'),
-
+    path('quiz/', QuizPage.as_view(), name='quiz'),
     # Account related urls
     path("register/", UserRegistrationView.as_view(), name="user_registration"),
     path("registration/success/", UserSuccessView.as_view(), name="user_registration_success"),

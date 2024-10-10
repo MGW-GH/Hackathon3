@@ -103,21 +103,35 @@ Lucidchart was used to create the ERD for Quizards. To satisfy the application n
 
 # Testing
 
-Website tested for responsivity of all pages and components by sight and manual testing, for three screen sizes Mobile, Laptop, and Desktop.
+## Responsiveness
+The website has been thoroughly tested for responsiveness across all pages and components. Manual testing was conducted for three primary screen sizes:
+- Mobile
+- Laptop
+- Desktop
+
+## Functionality Testing
+All website pages underwent manual testing to ensure every feature functions as intended. 
+
+### Bug Report
+- **Issue**: Login page form was not posting.
+- **Cause**: An additional  `</form>` closing tag was present before the contents of the form.
+- **Resolution**: The extra tag has been removed, resolving the issue.
 
 ## HTML Validation
-HTML run through W3 validator.
+All HTML code was validated using the W3C Markup Validation Service.
 
-![HTML img 1]()
-![HTML error img 1]()
+### Findings
+- An extra `</div>` closing tag was identified on the `registration-success.html` page.
+- **Resolution**: The superfluous tag has been removed.
 
-Current build works with no errors in browser and mobile views.
-Bugs prioritsed to next iteration due to hard stop deadline.
+### Current Status
+The current build operates without errors in both browser and mobile views.
 
 ## CSS Validation
-All CSS run through Jigsaw validator no issues.
+All CSS code was validated using the W3C CSS Validation Service (Jigsaw).
 
-![css valid img1]() ![css valid img2]()
+### Results
+No issues were detected during the CSS validation process.
 
 ## Lighthouse
 

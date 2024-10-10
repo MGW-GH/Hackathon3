@@ -121,3 +121,8 @@ h6 {
 	display: flex;
 	justify-content: center;
 }
+
+.scores-center{
+	display: flex;
+	justify-content: center;
+}

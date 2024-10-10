@@ -33,6 +33,13 @@ def QuizPage(request):
 
             if selected_answer == question.answer:
                 score += 1
+
+            # Save the user's answer regardless of correctness
+            UserAnswer.objects.create(
+                trivia_question=question,
+                selected_answer=selected_answer,
+                user=request.user
+            )
         
         message = get_score_message(score)
         

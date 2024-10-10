@@ -38,15 +38,15 @@ def QuizPage(request):
 
 def get_score_message(score):
     if score == 5:
-        return "Perfect score! Excellent job!"
+        return "By the shimmering stars of knowledge! You’ve achieved a perfect score! You, dear quizzing champion, have proven yourself a master of trivia magic! May your wand always point to wisdom!"
     elif score == 4:
-        return "Great job! Almost perfect!"
+        return "Ah, a splendid score indeed! Four out of five! You’re nearly a wizard of trivia yourself! Just a sprinkle more practice, and you shall join the ranks of the great Quizmasters!"
     elif score == 3:
-        return "Good effort! You're on the right track."
+        return "Aha! Three out of five! Not too shabby, my intrepid learner! With a bit more curiosity and perhaps a few more potions of knowledge, you’ll soon be conjuring up even greater scores!"
     elif score == 2:
-        return "Not bad, but there's room for improvement."
+        return "Oh dear, two out of five! Fear not, brave soul! Even the mightiest wizards had to start somewhere. Dust off those spellbooks and return for another round—your journey is just beginning!"
     else:
-        return "Keep practicing, you'll get better!"
+        return "Oh, my stars and moonbeams! A score of one—or perhaps none? Worry not, dear friend! Every great wizard stumbles before they soar. Gather your courage, for I sense a spark of potential waiting to ignite within you!"
     
     return render(request, 'quiz.html', context)
 

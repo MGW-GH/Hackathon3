@@ -5,39 +5,37 @@
 <div class="row">
     <div class="col-lg-8">
         <div class="quiz-page-header">
-            <img src="/static/images/quizards-text-logo.webp" alt="Quizards text logo"><img
-                src="/static/images/quizzard-img.webp" alt="Quizard character">
+            <img src="/static/images/quizards-text-logo.webp" alt="Quizards text logo">
+            <img src="/static/images/quizzard-img.webp" alt="Quizard character">
         </div>
         <div class="box-element question-card mx-auto">
             <h2 class="question-title">Leaderboard</h2>
             <hr>
-            <h3>What is the largest ocean?</h3><br>
-            <!-- <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio1">A] Atlantic Ocean</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio2" name="customRadio2" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">B] Indian Ocean</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio3">C] Arctic Ocean</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio4" name="customRadio4" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio4">D] Pacific Ocean</label>
-            </div> -->
-            <!-- {% if user.is_authenticated %}
-			
-			{% else %}
-			
-			{% endif %} -->
-
-
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Correct Answers</th>
+                        <th>Total Answers</th>
+                        <th>Percentage Correct</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in scores %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.correct_answers }}</td>
+                        <td>{{ user.total_answers }}</td>
+                        <td>{{ user.percentage_correct|floatformat:2 }}%</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">No scores available.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
-
 </div>
-
 {% endblock content %}
